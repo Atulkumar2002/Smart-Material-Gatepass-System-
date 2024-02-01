@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Registration Page</title>
+  <style>
+    body {
+      background-image: url('520928.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      margin-top: 100px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration</h1>
+    <form action="page-1 starting page new.html" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="username">Create Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Create Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+
+  <style>
+    .truck {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      animation: truckMove 5s infinite linear;
+    }
+
+    @keyframes truckMove {
+      0% { left: -100px; }
+      100% { left: calc(100% + 100px); }
+    }
+  </style>
+
+  <div class="container">
+    <div class="truck">
+      <img src="g.jpg" alt="Truck Image" width="100px">
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Material Gatepass System</title>
+  <style>
+    body {
+      background-image: url("520928.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #FF33BB;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Smart Material Gatepass System form</h1>
+  </div>
+
+  <div class="container">
+    <form action="backend_endpoint" method="POST">
+      <label for="material">Material:</label>
+      <input type="text" id="material" name="material" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="text" id="quantity" name="quantity" required>
+
+      <label for="Units">Units:</label>
+      <input type="text" id="quantity" name="Units" required>
+
+      <label for="source">Source Location:</label>
+      <select id="source" name="source" required>
+        <option value="" selected disabled>Select source location</option>
+        <option value="Location A">Location A</option>
+        <option value="Location B">Location B</option>
+        <option value="Location C">Location C</option>
+      </select>
+
+      <label for="destination">Destination Location:</label>
+      <select id="destination" name="destination" required>
+        <option value="" selected disabled>Select destination location</option>
+        <option value="Location X">Location X</option>
+        <option value="Location Y">Location Y</option>
+        <option value="Location Z">Location Z</option>
+      </select>
+
+      <label for="transportation_date">Date of Transportation:</label>
+      <input type="date" id="transportation_date" name="transportation_date" required>
+
+      <label for="purpose">Purpose of Transportation:</label>
+      <textarea id="purpose" name="purpose" rows="4" required></textarea>
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required onchange="populateApprovers()">
+        <option value="" selected disabled>Select department</option>
+        <option value="Department A">Department A</option>
+        <option value="Department B">Department B</option>
+        <option value="Department C">Department C</option>
+      </select>
+
+      <label for="approvers">Approvers:</label>
+      <select id="approvers" name="approvers" required>
+        <option value="" selected disabled>Select department first</option>
+      </select>
+
+      <div class="button-container">
+        <input type="submit" value="Submit">
+        <input type="submit" value="Save as Draft">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function populateApprovers() {
+      var departmentSelect = document.getElementById("department");
+      var approverSelect = document.getElementById("approvers");
+      approverSelect.innerHTML = ""; // Clear existing options
+
+      // Define the options for each department
+      var approverOptions = {
+        "Department A": ["Approver 1", "Approver 2", "Approver 3"],
+        "Department B": ["Approver 4", "Approver 5", "Approver 6"],
+        "Department C": ["Approver 7", "Approver 8", "Approver 9"]
+      };
+
+      var selectedDepartment = departmentSelect.value;
+      var departmentApprovers = approverOptions[selectedDepartment];
+
+      if (departmentApprovers) {
+        // Create and add options for the selected department
+        for (var i = 0; i < departmentApprovers.length; i++) {
+          var option = document.createElement("option");
+          option.value = departmentApprovers[i];
+          option.text = departmentApprovers[i];
+          approverSelect.appendChild(option);
+        }
+      } else {
+        // Add a default option if no department is selected
+        var option = document.createElement("option");
+        option.value = "";
+        option.text = "Select department first";
+        approverSelect.appendChild(option);
+      }
+    }
+  </script>
+</body>
+</html>

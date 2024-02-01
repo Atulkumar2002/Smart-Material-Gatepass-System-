@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatepass System</title>
+  <style>
+    body {
+      background-image: url("520928.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+   
+    .header {
+     background: #BE04FF;
+
+padding: 20px;
+      text-align: center;
+      font-size: 24px;
+
+      color: #fff;
+      
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #FFA833;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 10px;
+    }
+
+    .search-bar {
+      display: inline-block;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 5px;
+    }
+
+    .search-bar input[type="text"] {
+      border: none;
+      outline: none;
+      padding: 5px;
+    }
+
+    .notification-bar {
+      background-color: #FF33A8;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button {
+      background-color: transparent;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 5px;
+      margin: 0 10px;
+      border-radius: 4px;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    .main-options {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .main-options .option {
+      margin-bottom: 20px;
+    }
+
+    .main-options .upload-btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .main-options input[type="file"] {
+      display: none;
+    }
+
+    .main-options .upload-btn label {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Welcome to Gatepass System</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Gatepass</a>
+    <a href="#">History</a>
+    <a href="#">New</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+    </div>
+  </div>
+    <div class="main-options">
+    <h2><a href="Approval_dashboard.html">Approver Dashboard</a></h2>
+      <h2><a href="form.html">Raise a Gatepass</a></h2>
+      <h2><a href="gatepass_history.html">View Gatepass History</a></h2>
+      <div class="option">
+        <h2>Upload Your Picture</h2>
+        <div class="upload-btn">
+          <input type="file" id="upload" accept="image/*">
+          <label for="upload">Upload Photo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
